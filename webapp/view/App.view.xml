@@ -2,20 +2,7 @@
 	controllerName="at.clouddna.training00.FioriDeepDive.controller.App" displayBlock="true">
 	<Shell id="shell">
 		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}" showFooter="true">
-					<content>
-						<!-- Content wird duch Fragment erstetzt -->
-					</content>
-					<footer>
-						<Toolbar>
-							<ToolbarSpacer/>
-							<Button id="app_button_edit" text="{i18n>button.edit}" type="Emphasized" press="onEditPress" visible="{= !${editModel>/editmode}}"/>
-							<Button id="app_button_save" visible="{editModel>/editmode}" text="{i18n>button.save}" type="Accept" press="onSavePress"/>
-						</Toolbar>
-					</footer>
-				</Page>
-			</pages>
+			<pages></pages>
 		</App>
 	</Shell>
 </mvc:View>

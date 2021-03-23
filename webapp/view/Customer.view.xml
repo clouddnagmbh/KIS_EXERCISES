@@ -1,0 +1,15 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="at.clouddna.training00.FioriDeepDive.controller.Customer" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="page" title="{i18n>title}" showFooter="true">
+		<content>
+			<!-- Content wird duch Fragment erstetzt -->
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button id="customer_button_edit" text="{i18n>button.edit}" type="Emphasized" press="onEditPress" visible="{= !${editModel>/editmode}}"/>
+				<Button id="customer_button_save" visible="{editModel>/editmode}" text="{i18n>button.save}" type="Accept" press="onSavePress"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
