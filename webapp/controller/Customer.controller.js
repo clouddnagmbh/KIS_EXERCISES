@@ -114,8 +114,8 @@ sap.ui.define([
 						} else {
 							if (this.getView().getModel().hasPendingChanges()) {
 								this.getView().getModel().resetChanges();
-								this._toggleEdit(false);
 							}
+							this._toggleEdit(false);
 						}
 					}
 				}.bind(this)
