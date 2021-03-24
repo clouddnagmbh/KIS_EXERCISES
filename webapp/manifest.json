@@ -86,12 +86,17 @@
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "",
 				"pattern": "RouteApp",
 				"target": ["TargetApp"]
 			}, {
-				"name": "Customer",
+				"name": "Main",
 				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Main"]
+			}, {
+				"name": "Customer",
+				"pattern": "customer",
 				"titleTarget": "",
 				"greedy": false,
 				"target": ["Customer"]
@@ -107,6 +112,10 @@
 				"Customer": {
 					"viewType": "XML",
 					"viewName": "Customer"
+				},
+				"Main": {
+					"viewType": "XML",
+					"viewName": "Main"
 				}
 			}
 		}
