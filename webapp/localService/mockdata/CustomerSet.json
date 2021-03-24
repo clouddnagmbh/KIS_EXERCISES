@@ -1,0 +1,181 @@
+[{
+	"CustomerId": "00a4c48c-0dfc-4507-abc6-9b54a431b788",
+	"Firstname": "Firstname 1",
+	"Lastname": "Lastname 1",
+	"AcademicTitle": "AcademicTitle 1",
+	"Phone": "Phone 1",
+	"Email": "Email 1",
+	"Website": "Website 1",
+	"Gender": "Gender 1",
+	"__metadata": {
+		"uri": "CustomerSet(guid'00a4c48c-0dfc-4507-abc6-9b54a431b788')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'00a4c48c-0dfc-4507-abc6-9b54a431b788')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "f3e90896-0a5e-4c86-86ea-cf9424f75486",
+	"Firstname": "Firstname 2",
+	"Lastname": "Lastname 2",
+	"AcademicTitle": "AcademicTitle 2",
+	"Phone": "Phone 2",
+	"Email": "Email 2",
+	"Website": "Website 2",
+	"Gender": "Gender 2",
+	"__metadata": {
+		"uri": "CustomerSet(guid'f3e90896-0a5e-4c86-86ea-cf9424f75486')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'f3e90896-0a5e-4c86-86ea-cf9424f75486')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "3de340d6-7800-412b-9f0c-22f5003d8c86",
+	"Firstname": "Firstname 3",
+	"Lastname": "Lastname 3",
+	"AcademicTitle": "AcademicTitle 3",
+	"Phone": "Phone 3",
+	"Email": "Email 3",
+	"Website": "Website 3",
+	"Gender": "Gender 3",
+	"__metadata": {
+		"uri": "CustomerSet(guid'3de340d6-7800-412b-9f0c-22f5003d8c86')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'3de340d6-7800-412b-9f0c-22f5003d8c86')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "bfdfa469-78cd-44b8-ac65-7530dd17c45c",
+	"Firstname": "Firstname 4",
+	"Lastname": "Lastname 4",
+	"AcademicTitle": "AcademicTitle 4",
+	"Phone": "Phone 4",
+	"Email": "Email 4",
+	"Website": "Website 4",
+	"Gender": "Gender 4",
+	"__metadata": {
+		"uri": "CustomerSet(guid'bfdfa469-78cd-44b8-ac65-7530dd17c45c')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'bfdfa469-78cd-44b8-ac65-7530dd17c45c')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "32490678-e9b7-4be4-8e52-2f1af8f209cf",
+	"Firstname": "Firstname 5",
+	"Lastname": "Lastname 5",
+	"AcademicTitle": "AcademicTitle 5",
+	"Phone": "Phone 5",
+	"Email": "Email 5",
+	"Website": "Website 5",
+	"Gender": "Gender 5",
+	"__metadata": {
+		"uri": "CustomerSet(guid'32490678-e9b7-4be4-8e52-2f1af8f209cf')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'32490678-e9b7-4be4-8e52-2f1af8f209cf')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "0c26fa31-ccf5-4b07-997f-010b4bd966bc",
+	"Firstname": "Firstname 6",
+	"Lastname": "Lastname 6",
+	"AcademicTitle": "AcademicTitle 6",
+	"Phone": "Phone 6",
+	"Email": "Email 6",
+	"Website": "Website 6",
+	"Gender": "Gender 6",
+	"__metadata": {
+		"uri": "CustomerSet(guid'0c26fa31-ccf5-4b07-997f-010b4bd966bc')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'0c26fa31-ccf5-4b07-997f-010b4bd966bc')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "b14f718f-4ac1-4211-97d8-8ebd4145aa3b",
+	"Firstname": "Firstname 7",
+	"Lastname": "Lastname 7",
+	"AcademicTitle": "AcademicTitle 7",
+	"Phone": "Phone 7",
+	"Email": "Email 7",
+	"Website": "Website 7",
+	"Gender": "Gender 7",
+	"__metadata": {
+		"uri": "CustomerSet(guid'b14f718f-4ac1-4211-97d8-8ebd4145aa3b')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'b14f718f-4ac1-4211-97d8-8ebd4145aa3b')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "9c3f90fb-1e3b-4083-a1c6-ca6e8a9a2fbe",
+	"Firstname": "Firstname 8",
+	"Lastname": "Lastname 8",
+	"AcademicTitle": "AcademicTitle 8",
+	"Phone": "Phone 8",
+	"Email": "Email 8",
+	"Website": "Website 8",
+	"Gender": "Gender 8",
+	"__metadata": {
+		"uri": "CustomerSet(guid'9c3f90fb-1e3b-4083-a1c6-ca6e8a9a2fbe')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'9c3f90fb-1e3b-4083-a1c6-ca6e8a9a2fbe')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "0a4d4de6-e3c4-411c-9676-3879c2ae7dde",
+	"Firstname": "Firstname 9",
+	"Lastname": "Lastname 9",
+	"AcademicTitle": "AcademicTitle 9",
+	"Phone": "Phone 9",
+	"Email": "Email 9",
+	"Website": "Website 9",
+	"Gender": "Gender 9",
+	"__metadata": {
+		"uri": "CustomerSet(guid'0a4d4de6-e3c4-411c-9676-3879c2ae7dde')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'0a4d4de6-e3c4-411c-9676-3879c2ae7dde')/Documents"
+		}
+	}
+}, {
+	"CustomerId": "f340abaa-acf0-42f8-8432-04307c9e409e",
+	"Firstname": "Firstname 10",
+	"Lastname": "Lastname 10",
+	"AcademicTitle": "AcademicTitle 10",
+	"Phone": "Phone 10",
+	"Email": "Email 10",
+	"Website": "Website 10",
+	"Gender": "Gender 10",
+	"__metadata": {
+		"uri": "CustomerSet(guid'f340abaa-acf0-42f8-8432-04307c9e409e')",
+		"type": "ZHOFIO_SRV.Customer"
+	},
+	"Documents": {
+		"__deferred": {
+			"uri": "CustomerSet(guid'f340abaa-acf0-42f8-8432-04307c9e409e')/Documents"
+		}
+	}
+}]

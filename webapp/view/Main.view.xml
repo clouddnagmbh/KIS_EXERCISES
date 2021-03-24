@@ -2,13 +2,13 @@
 	controllerName="at.clouddna.training00.FioriDeepDive.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{i18n>main.title}" id="main_page">
 		<content>
-			<Table id="main_table" headerText="{i18n>main.table.title}" items="{/customers}">
+			<Table id="main_table" headerText="{i18n>main.table.title}" items="{/CustomerSet}">
 				<columns>
 					<Column id="main_column_customerid">
-						<Text text="{i18n>app.customerid}"/>
+						<Text text="{/#Customer/CustomerId/@sap:label}"/>
 					</Column>
 					<Column id="main_column_firstname">
-						<Text text="{i18n>app.firstname}"/>
+						<Text text="{/#Customer/Firstname/@sap:label}"/>
 					</Column>
 					<Column id="main_column_lastname">
 						<Text text="{i18n>app.lastname}"/>
@@ -31,14 +31,14 @@
 				</columns>
 				<items>
 					<ColumnListItem>
-						<ObjectIdentifier title="{customerid}"/>
-						<Text text="{firstname}"/>
-						<Text text="{lastname}"/>
-						<Text text="{title}"/>
-						<Text text="{gender}"/>
-						<Text text="{email}"/>
-						<Text text="{phone}"/>
-						<Link text="{website}" href="https://{website}" target="_blank"/>
+						<ObjectIdentifier title="{CustomerId}"/>
+						<Text text="{Firstname}"/>
+						<Text text="{Lastname}"/>
+						<Text text="{AcademicTitle}"/>
+						<Text text="{Gender}"/>
+						<Text text="{Email}"/>
+						<Text text="{Phone}"/>
+						<Link text="{Website}" href="https://{Website}" target="_blank"/>
 					</ColumnListItem>
 				</items>
 			</Table>

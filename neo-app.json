@@ -40,6 +40,15 @@
         "version": "1.71.35"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "CloudDNA_WDF_FSD",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "CloudDNA_WDF_FSD"
     }
   ],
   "sendWelcomeFileRedirect": true
