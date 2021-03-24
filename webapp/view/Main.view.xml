@@ -2,7 +2,14 @@
 	controllerName="at.clouddna.training00.FioriDeepDive.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{i18n>main.title}" id="main_page">
 		<content>
-			<Table id="main_table" headerText="{i18n>main.table.title}" items="{/CustomerSet}">
+			<Table id="main_table" items="{/CustomerSet}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>main.table.title}"/>
+						<ToolbarSpacer/>
+						<Button id="main_button_create" text="{i18n>button.create}" press="onNewCustomerPress"/>
+					</Toolbar>
+				</headerToolbar>
 				<columns>
 					<Column id="main_column_customerid">
 						<Text text="{/#Customer/CustomerId/@sap:label}"/>
@@ -28,9 +35,12 @@
 					<Column id="main_column_website">
 						<Text text="{i18n>app.website}"/>
 					</Column>
+					<Column id="main_column_delete">
+						<Text text="{i18n>app.delete}"/>
+					</Column>
 				</columns>
 				<items>
-					<ColumnListItem>
+					<ColumnListItem type="Navigation" press="onCustomerPress">
 						<ObjectIdentifier title="{CustomerId}"/>
 						<Text text="{Firstname}"/>
 						<Text text="{Lastname}"/>
@@ -39,6 +49,7 @@
 						<Text text="{Email}"/>
 						<Text text="{Phone}"/>
 						<Link text="{Website}" href="https://{Website}" target="_blank"/>
+						<Button icon="sap-icon://delete" press="onDeleteCustomerPress"/>
 					</ColumnListItem>
 				</items>
 			</Table>

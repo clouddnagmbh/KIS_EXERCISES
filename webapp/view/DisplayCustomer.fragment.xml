@@ -4,20 +4,21 @@
 		columnsL="1" columnsM="1" singleContainerFullSize="false">
 		<f:content>
 			<Label id="display_label_customerid" text="{i18n>app.customerid}" labelFor="display_text_customerid"/>
-			<Text id="display_text_customerid" text="{/customerid}"/>
+			<Text id="display_text_customerid" text="{CustomerId}"/>
 			<Label id="display_label_firstname" text="{i18n>app.firstname}" labelFor="display_text_firstname"/>
-			<Text id="display_text_firstname" text="{/firstname}"/>
+			<Text id="display_text_firstname" text="{Firstname}"/>
 			<Label id="display_label_lastname" text="{i18n>app.lastname}" labelFor="display_text_lastname"/>
-			<Text id="display_text_lastname" text="{/lastname}"/>
+			<Text id="display_text_lastname" text="{Lastname}"/>
 			<Label id="display_label_title" text="{i18n>app.title}" labelFor="display_text_title"/>
-			<Text id="display_text_title" text="{/title}"/>
+			<Text id="display_text_title" text="{AcademicTitle}"/>
 			<Label id="display_label_email" text="{i18n>app.email}" labelFor="display_text_email"/>
-			<Text id="display_text_email" text="{/email}"/>
+			<Text id="display_text_email" text="{Email}"/>
 			<Label id="display_label_gender" text="{i18n>app.gender}" labelFor="display_text_gender"/>
+			<Text id="display_text_gender" text="{path: 'Gender', formatter: '.formatter.genderFormatter'}"/>
 			<Label id="display_label_phone" text="{i18n>app.phone}" labelFor="display_text_phone"/>
-			<Text id="display_text_phone" text="{/phone}"/>
+			<Text id="display_text_phone" text="{Phone}"/>
 			<Label id="display_label_website" text="{i18n>app.website}" labelFor="display_text_website"/>
-			<Text id="display_text_website" text="{/website}"/>
+			<Link id="display_text_website" text="{Website}" href="https://{Website}" target="_blank"/>
 		</f:content>
 	</f:SimpleForm>
 </core:FragmentDefinition>
