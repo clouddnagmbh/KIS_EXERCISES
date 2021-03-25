@@ -30,7 +30,24 @@ sap.ui.define([
 			if (sCustomerId !== "create") {
 				this._sMode = "display";
 				this._showCustomerFragment("DisplayCustomer");
-				this.getView().bindElement("/CustomerSet(guid'" + sCustomerId + "')");
+				this.getView().bindElement({
+					path: "/CustomerSet(guid'" + sCustomerId + "')",
+					events: {
+						dataRequested: function () {
+							this.logInfo("Customer " + sCustomerId + " was requested");
+							this.getView().setBusy(true);
+						}.bind(this),
+						dataReceived: function (oData) {
+							if (oData.getParameter("data")) {
+								this.logInfo("Customer " + sCustomerId + " was received");
+							} else {
+								this.logError("Customer " + sCustomerId + " was not found");
+							}
+
+							this.getView().setBusy(false);
+						}.bind(this),
+					}
+				});
 				this.logInfo("Display Customer")
 			} else {
 				this._sMode = "create";
@@ -58,6 +75,8 @@ sap.ui.define([
 		},
 
 		onSavePress: function (oEvent) {
+			this.getView().setBusy(true);
+
 			if (this._sMode === "create") {
 				let oModel = this.getModel(),
 					oCreateData = this.getModel("createModel").getData();
@@ -65,6 +84,7 @@ sap.ui.define([
 				oModel.create("/CustomerSet", oCreateData, {
 					success: function (oData, response) {
 						this.logInfo("Customer was created");
+						this.getView().setBusy(false);
 						MessageBox.information(this.geti18nText("dialog.create.success"), {
 							onClose: function () {
 								this.onNavBack();
@@ -73,6 +93,7 @@ sap.ui.define([
 					}.bind(this),
 					error: function (oError) {
 						this.logError("Customer was not created");
+						this.getView().setBusy(false);
 						MessageBox.error(oError.message, {
 							onClose: function () {
 								this.onNavBack();
@@ -82,10 +103,21 @@ sap.ui.define([
 				});
 			} else {
 				if (this.getModel().hasPendingChanges()) {
-					this.logInfo("Changes were saved");
-					this.getModel().submitChange();
-					MessageBox.information(this.geti18nText("dialog.update.success"));
+					this.getModel().submitChanges({
+						success: function () {
+							MessageBox.information(this.geti18nText("dialog.update.success"));
+							this.logInfo("Customer saved");
+							this.getView().setBusy(false);
+						}.bind(this),
+						error: function () {
+							MessageBox.error(this.geti18nText("dialog.update.error"));
+							this.logError("Customer was not saved");
+							this.getView().setBusy(false);
+						}.bind(this)
+					});
+
 				}
+				this.getView().setBusy(false);
 				this._toggleEdit(false);
 			}
 		},
@@ -111,6 +143,8 @@ sap.ui.define([
 			let oModel = this.getView().getModel("editModel");
 
 			oModel.setProperty("/editmode", bEditMode);
+
+			this.setDirtyState(bEditMode);
 
 			this._showCustomerFragment(bEditMode ? 'EditCustomer' : 'DisplayCustomer');
 		},

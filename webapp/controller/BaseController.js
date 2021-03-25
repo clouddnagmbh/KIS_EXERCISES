@@ -21,6 +21,17 @@ sap.ui.define([
 			}
 		},
 
+		setDirtyState: function (bState) {
+			if (sap.ushell) {
+				sap.ushell.Container.setDirtyFlag(bState);
+
+				let sState = bState ? 'true' : 'false';
+				this.logInfo("Dirty-Flag set to: " + sState);
+			}
+
+			this.logWarning("Can't set dirty-flag: Not in Launchpad Mode");
+		},
+
 		getRouter: function () {
 			//set Content Density
 			this.setContentDensity();
