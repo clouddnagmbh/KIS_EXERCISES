@@ -1,14 +1,14 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
+	"at/clouddna/training00/FioriDeepDive/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/Fragment",
 	"sap/m/MessageBox",
 	"at/clouddna/training00/FioriDeepDive/formatter/formatter",
 	"sap/ui/core/routing/History"
-], function (Controller, JSONModel, Fragment, MessageBox, formatter, History) {
+], function (BaseController, JSONModel, Fragment, MessageBox, formatter, History) {
 	"use strict";
 
-	return Controller.extend("at.clouddna.training00.FioriDeepDive.controller.Customer", {
+	return BaseController.extend("at.clouddna.training00.FioriDeepDive.controller.Customer", {
 
 		formatter: formatter,
 
@@ -16,10 +16,7 @@ sap.ui.define([
 		_sMode: "",
 
 		onInit: function () {
-
-			let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-
-			oRouter.getRoute("Customer").attachPatternMatched(this._onPatternMatched, this);
+			this.getRouter().getRoute("Customer").attachPatternMatched(this._onPatternMatched, this);
 		},
 
 		_onPatternMatched: function (oEvent) {
@@ -28,15 +25,15 @@ sap.ui.define([
 				}),
 				sCustomerId = oEvent.getParameter("arguments").customerid;
 
-			this.getView().setModel(oEditModel, "editModel");
+			this.setModel(oEditModel, "editModel");
 
 			if (sCustomerId !== "create") {
 				this._sMode = "display";
 				this._showCustomerFragment("DisplayCustomer");
 				this.getView().bindElement("/CustomerSet(guid'" + sCustomerId + "')");
+				this.logInfo("Display Customer")
 			} else {
 				this._sMode = "create";
-
 				let oCreateModel = new JSONModel({
 					Firstname: "",
 					Lastname: "",
@@ -47,25 +44,13 @@ sap.ui.define([
 					Website: ""
 				});
 
-				this.getView().setModel(oCreateModel, "createModel");
+				this.setModel(oCreateModel, "createModel");
 
 				oEditModel.setProperty("/editmode", true);
 				this._showCustomerFragment("CreateCustomer");
+				this.logInfo("Create Customer");
 			}
 
-		},
-
-		onNavBack: function (oEvent) {
-			let oHistory = History.getInstance(),
-				oPreviousHash = oHistory.getPreviousHash();
-
-			if (oPreviousHash) {
-				window.history.go(-1);
-			} else {
-				let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-
-				oRouter.navTo("Main", true);
-			}
 		},
 
 		onEditPress: function (oEvent) {
@@ -73,21 +58,21 @@ sap.ui.define([
 		},
 
 		onSavePress: function (oEvent) {
-			let oBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-
 			if (this._sMode === "create") {
-				let oModel = this.getView().getModel(),
-					oCreateData = this.getView().getModel("createModel").getData();
+				let oModel = this.getModel(),
+					oCreateData = this.getModel("createModel").getData();
 
 				oModel.create("/CustomerSet", oCreateData, {
 					success: function (oData, response) {
-						MessageBox.information(oBundle.getText("dialog.create.success"), {
+						this.logInfo("Customer was created");
+						MessageBox.information(this.geti18nText("dialog.create.success"), {
 							onClose: function () {
 								this.onNavBack();
 							}.bind(this),
 						});
 					}.bind(this),
 					error: function (oError) {
+						this.logError("Customer was not created");
 						MessageBox.error(oError.message, {
 							onClose: function () {
 								this.onNavBack();
@@ -96,24 +81,24 @@ sap.ui.define([
 					}.bind(this)
 				});
 			} else {
-				if (this.getView().getModel().hasPendingChanges()) {
-					this.getView().getModel().submitChange();
-					MessageBox.information(oBundle.getText("dialog.update.success"));
+				if (this.getModel().hasPendingChanges()) {
+					this.logInfo("Changes were saved");
+					this.getModel().submitChange();
+					MessageBox.information(this.geti18nText("dialog.update.success"));
 				}
+				this._toggleEdit(false);
 			}
 		},
 
 		onCancelPress: function (oEvent) {
-			let oBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-
-			MessageBox.confirm(oBundle.getText("dialog.cancel"), {
+			MessageBox.confirm(this.geti18nText("dialog.cancel"), {
 				onClose: function (sAction) {
 					if (sAction === MessageBox.Action.OK) {
 						if (this._sMode === "create") {
 							this.onNavBack();
 						} else {
-							if (this.getView().getModel().hasPendingChanges()) {
-								this.getView().getModel().resetChanges();
+							if (this.getModel().hasPendingChanges()) {
+								this.getModel().resetChanges();
 							}
 							this._toggleEdit(false);
 						}
