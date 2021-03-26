@@ -1,6 +1,16 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" busyIndicatorDelay="0"
 	controllerName="at.clouddna.training00.FioriDeepDive.controller.Customer" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page id="page" title="{i18n>title}" showFooter="true" showNavButton="{= !${editModel>/editmode}}" navButtonPress="onNavBack">
+	<Page id="page" showFooter="true">
+		<customHeader>
+			<core:ExtensionPoint name="customer_ext_poin1">
+				<Toolbar>
+					<Button type="Back" press="onNavBack" visible="{= !${editModel>/editmode}}"/>
+					<ToolbarSpacer/>
+					<Title text="{i18n>title}"/>
+					<ToolbarSpacer/>
+				</Toolbar>
+			</core:ExtensionPoint>
+		</customHeader>
 		<content>
 			<!-- Content wird duch Fragment erstetzt -->
 		</content>
